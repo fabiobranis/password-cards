@@ -1,0 +1,17 @@
+FROM node:18-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm ci
+
+COPY . .
+
+ENV SERVER_PORT=$SERVER_PORT
+ENV CLIENT_PORT=$CLIENT_PORT
+ENV CLIENT_ADDRESS=$CLIENT_ADDRESS
+ENV API_ENDPOINT=$API_ENDPOINT
+EXPOSE $SERVER_PORT
+
+CMD ["npm", "run", "start"] 

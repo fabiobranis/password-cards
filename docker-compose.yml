@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  frontend:
+    image: fabio-nunes/velozient-client
+    environment:
+      SERVER_PORT: 3000
+      SERVER_ADDRESS: localhost
+      API_ENDPOINT: api
+    ports:
+      - "8000:80"
+    depends_on:
+      - backend
+    networks:
+      - velozient-network
+  backend:
+    image: fabio-nunes/velozient-server
+    environment:
+      SERVER_PORT: 3000
+      SERVER_ADDRESS: localhost
+      CLIENT_PORT: 8000
+      CLIENT_ADDRESS: localhost
+      API_ENDPOINT: api
+    ports:
+      - "3000:3000"
+    networks:
+      - velozient-network
+networks:
+  velozient-network: {}
