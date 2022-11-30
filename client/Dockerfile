@@ -9,6 +9,8 @@ RUN npm install
 
 COPY . .
 
+RUN npm rebuild esbuild
+
 RUN npm run build
 
 # production stage
