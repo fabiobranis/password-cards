@@ -10,5 +10,5 @@ export const httpErrorHandler = (err, res) => {
     return res.status(404).send({ message: err.message });
   }
 
-  return res.status(400);
+  return res.status(400).send();
 };
