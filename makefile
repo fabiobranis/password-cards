@@ -9,8 +9,8 @@ test-client:
 test-server:
 	cd server && npm run test
 build-server:	
-	cd server && docker build . -t fabio-nunes/velozient-server
+	cd server && docker build . -t fabio-nunes/password-cards-server
 build-client:	
-	cd client && docker build . -t fabio-nunes/velozient-client
+	cd client && docker build . -t fabio-nunes/password-cards-client
 start-applications:
 	docker compose up -d
