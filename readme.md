@@ -1,4 +1,4 @@
-# Password Cards Velozient Assessment
+# Password Cards
 
 ## About the app
 
@@ -66,7 +66,7 @@ Basically when you issue the make command, the application is going to install d
 ### Without make
 
 You can start the app from the root issuing `npm run start:dev` or you can:
-`cd server && docker build . -t fabio-nunes/velozient-server`
-`cd client && docker build . -t fabio-nunes/velozient-client`
+`cd server && docker build . -t fabio-nunes/password-cards-server`
+`cd client && docker build . -t fabio-nunes/password-cards-client`
 `cd.. && docker compose up -d`
 
