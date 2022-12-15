@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   frontend:
-    image: fabio-nunes/velozient-client
+    image: fabio-nunes/password-cards-client
     environment:
       SERVER_PORT: 3000
       SERVER_ADDRESS: localhost
@@ -11,9 +11,9 @@ services:
     depends_on:
       - backend
     networks:
-      - velozient-network
+      - password-cards-network
   backend:
-    image: fabio-nunes/velozient-server
+    image: fabio-nunes/password-cards-server
     environment:
       SERVER_PORT: 3000
       SERVER_ADDRESS: localhost
@@ -23,6 +23,6 @@ services:
     ports:
       - "3000:3000"
     networks:
-      - velozient-network
+      - password-cards-network
 networks:
-  velozient-network: {}
+  password-cards-network: {}
